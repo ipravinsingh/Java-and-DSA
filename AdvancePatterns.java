@@ -87,7 +87,39 @@
 // }
 // }
 
-// Butterfly pattern
+// // Butterfly pattern
+// public class AdvancePatterns {
+// public static void butterfluPattern(int n) {
+// for (int i = 1; i <= n; i++) {
+// for (int j = 1; j <= i; j++) {
+// System.out.print("*");
+// }
+// for (int j = 1; j <= 2 * (n - i); j++) {
+// System.out.print(" ");
+// }
+// for (int j = 1; j <= i; j++) {
+// System.out.print("*");
+// }
+// System.out.println();
+// }
+// // Second half
+// for (int i = n; i >= 1; i--) {
+// for (int j = 1; j <= i; j++) {
+// System.out.print("*");
+// }
+// for (int j = 1; j <= 2 * (n - i); j++) {
+// System.out.print(" ");
+// }
+// for (int j = 1; j <= i; j++) {
+// System.out.print("*");
+// }
+// System.out.println();
+// }
+// }
+// public static void main(String[] args) {
+// butterfluPattern(7);
+// }
+// }
 
 // // Solid Rhombus pattern
 // public class AdvancePatterns {
@@ -129,33 +161,72 @@
 // }
 // }
 
-// Diamond pattern
-public class AdvancePatterns {
+// // Diamond pattern
+// public class AdvancePatterns {
+// public static void diamondPattern(int n) {
+// for (int i = 1; i <= n; i++) {
+// for (int j = 1; j <= n - i; j++) {
+// System.out.print(" ");
+// }
+// for (int k = 1; k <= (2 * i) - 1; k++) {
+// System.out.print("*");
+// }
+// System.out.println();
+// }
+// // Other half
+// for (int i = n; i >= 1; i--) {
+// for (int j = 1; j <= n - i; j++) {
+// System.out.print(" ");
+// }
+// for (int k = 1; k <= (2 * i) - 1; k++) {
+// System.out.print("*");
+// }
+// System.out.println();
+// }
+// }
+// public static void main(String[] args) {
+// diamondPattern(5);
+// }
+// }
 
-    public static void diamondPattern(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= (2 * i) - 1; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+// // Number pyramid pattern
+// public class AdvancePatterns {
+// public static void numberPyraidPattern(int n) {
+// for (int i = 1; i <= n; i++) {
+// for (int j = 1; j <= n - i; j++) {
+// System.out.print(" ");
+// }
+// for (int k = 1; k <= i; k++) {
+// System.out.print(i + " ");
+// }
+// System.out.println();
+// }
+// }
+// public static void main(String[] args) {
+// numberPyraidPattern(5);
+// }
+// }
 
-        // Other half
-        for (int i = n; i >= 1; i--) {
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print(" ");
-            }
-            for (int k = 1; k <= (2 * i) - 1; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-    }
+// // Palindromic Pattern with Numbers pattern
+// public class AdvancePatterns {
 
-    public static void main(String[] args) {
-        diamondPattern(5);
-    }
-}
+// public static void palindromicPAtternWithNums(int n) {
+// for (int i = 1; i <= n; i++) {
+// for (int j = 1; j <= n - i; j++) {
+// System.out.print(" ");
+// }
+// // decending
+// for (int j = i; j >= 1; j--) {
+// System.out.print(j);
+// }
+// // acending
+// for (int j = 2; j <= i; j++) {
+// System.out.print(j);
+// }
+// System.out.println();
+// }
+// }
+// public static void main(String[] args) {
+// palindromicPAtternWithNums(7);
+// }
+// }
