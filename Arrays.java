@@ -161,3 +161,54 @@
 // printSubarrays(arr);
 // }
 // }
+
+// // Max Subarray Sum by Brute Force
+// public class Arrays {
+// public static void maxSubarray(int arr[]) {
+// int currSum = 0;
+// int maxSum = Integer.MIN_VALUE;
+// for (int i = 0; i < arr.length; i++) {
+// for (int j = i; j < arr.length; j++) {
+// currSum = 0;
+// for (int k = i; k <= j; k++) {
+// currSum = currSum + arr[k];
+// }
+// System.out.println(currSum);
+// if (maxSum < currSum) {
+// maxSum = currSum;
+// }
+// }
+// }
+// System.out.println("Max Sum : " + maxSum);
+// }
+// public static void main(String[] args) {
+// int arr[] = { 1, -2, 6, -1, 3 };
+// maxSubarray(arr);
+// }
+// }
+
+// // Max Subarray Sum by Prefix Sum
+// public class Arrays {
+// public static void maxSubarraySum(int arr[]) {
+// int curSum = 0;
+// int maxSum = Integer.MIN_VALUE;
+// int prefix[] = new int[arr.length];
+// prefix[0] = arr[0];
+// for (int i = 1; i < prefix.length; i++) {
+// prefix[i] = prefix[i - 1] + arr[i];
+// }
+// for (int i = 0; i < arr.length; i++) {
+// for (int j = i; j < arr.length; j++) {
+// curSum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
+// if (maxSum < curSum) {
+// maxSum = curSum;
+// }
+// }
+// }
+// System.out.println("max sum = " + maxSum);
+// }
+// public static void main(String[] args) {
+// int arr[] = { 1, -2, 6, -1, 3 };
+// maxSubarraySum(arr);
+// }
+// }
