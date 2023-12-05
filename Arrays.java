@@ -73,7 +73,7 @@
 // }
 // }
 
-// // Find the index of element in a given array byBinary search_
+// // Find the index of element in a given array by Binary search_
 // public class Arrays {
 // public static int binarySearch(int arr[], int key) {
 // int start = 0;
@@ -210,5 +210,78 @@
 // public static void main(String[] args) {
 // int arr[] = { 1, -2, 6, -1, 3 };
 // maxSubarraySum(arr);
+// }
+// }
+
+// // Max subarray sum by Kadane 's
+// public class Arrays {
+// public static void kadane(int arr[]) {
+// int maxSum = Integer.MIN_VALUE;
+// int currSum = 0;
+// for (int i = 0; i < arr.length; i++) {
+// currSum = currSum + arr[i];
+// if (currSum < 0) {
+// currSum = 0;
+// }
+// maxSum = Math.max(maxSum, currSum);
+// }
+// System.out.println("Max sum will be : " + maxSum);
+// }
+// public static void main(String[] args) {
+// int arr[] = { -2, -3, 4, -1, -2, 1, 5, -3 };
+// kadane(arr);
+// }
+// }
+
+// // Trapping RainWater Question Sheet(Medium)_
+// public class Arrays {
+// public static int trappedRainWater(int height[]) {
+// int n = height.length;
+// // Calculate left max boundary - array
+// int leftmax[] = new int[n];
+// leftmax[0] = height[0];
+// for (int i = 1; i < n; i++) {
+// leftmax[i] = Math.max(height[i], leftmax[i - 1]);
+// }
+// // Calculate right max boundary - arry
+// int rightmax[] = new int[n];
+// rightmax[n - 1] = height[n - 1];
+// for (int i = n - 2; i >= 0; i--) {
+// rightmax[i] = Math.max(height[i], rightmax[i + 1]);
+// }
+// int trappedWater = 0;
+// // loop
+// for (int i = 0; i < n; i++) {
+// // waterLevel = min(leftmax boun, rightmax bound)
+// int waterLevel = Math.min(leftmax[i], rightmax[i]);
+// // trapped water = waterLevel - height[i]
+// trappedWater += waterLevel - height[i];
+// }
+// return trappedWater;
+// }
+// public static void main(String[] args) {
+// int height[] = { 4, 2, 0, 6, 3, 2, 5 };
+// System.out.println(trappedRainWater(height));
+// }
+// }
+
+// // Buy & Sell Stocks
+// public class Arrays {
+// public static int buyAndSellStocks(int prices[]) {
+// int buyPrice = Integer.MAX_VALUE;
+// int maxProfit = 0;
+// for (int i = 0; i < prices.length; i++) {
+// if (buyPrice < prices[i]) { // profit
+// int profit = prices[i] - buyPrice; // today's profit
+// maxProfit = Math.max(maxProfit, profit);
+// } else {
+// buyPrice = prices[i];
+// }
+// }
+// return maxProfit;
+// }
+// public static void main(String[] args) {
+// int prices[] = { 7, 1, 5, 3, 6, 4 };
+// System.out.println(buyAndSellStocks(prices));
 // }
 // }
